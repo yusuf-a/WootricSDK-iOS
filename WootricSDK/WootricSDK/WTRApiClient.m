@@ -185,7 +185,7 @@ static NSString *const WTRAPIVersion = @"api/v1";
 
     NSURLSessionDataTask *dataTask = [_wootricSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
       if (error || data == nil) {
-        [WTRLogger logError:@"(update end user): %@", responseJSON];
+        [WTRLogger logError:@"(update end user): %@, %@", error, data];
         return;
       }
 
